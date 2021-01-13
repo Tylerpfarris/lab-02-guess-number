@@ -25,7 +25,8 @@ export function compareNumbersFunc(guess, correctNumber) {
 export function checkGuessesLeftFunc(usersGuesses) {
     const noGuessesLeft = `Luck wasn't on your side today`;
     if (usersGuesses === 0) {
-        tooHighOrLowSpan.textContent = noGuessesLeft; 
+        tooHighOrLowSpan.textContent = noGuessesLeft;
+        return 1; 
     }
 }
 

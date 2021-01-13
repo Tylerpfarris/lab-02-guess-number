@@ -1,4 +1,4 @@
-import { compareNumbersFunc, checkGuessesLeftFunc, randomNumberFunc } from './utils.js';
+import { compareNumbersFunc, checkGuessesLeftFunc } from './utils.js';
 
 const makeGuessButton = document.getElementById('makeGuess');
 const userGuessInput = document.getElementById('user-Guess');
