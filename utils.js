@@ -2,8 +2,7 @@
 const tooHighOrLowSpan = document.getElementById('toHighOrLow');
 
 export function compareNumbersFunc(guess, correctNumber) {
-
-
+    //message strings
     const tooHighString = `thats too high`;
     const tooLowString = `thats too low`;
     const youGotItString = `you nailed it!!!`;
@@ -17,17 +16,18 @@ export function compareNumbersFunc(guess, correctNumber) {
     } else {
         tooHighOrLowSpan.textContent = youGotItString;
         return 0;
-    }
-
-}
-
-export function checkGuessesLeftFunc(usersGuesses) {
-
-    const noGuessesLeft = `Luck wasn't on your side today`;
-
-    if (usersGuesses === 0) {
-        tooHighOrLowSpan.textContent = noGuessesLeft;
         
     }
 
 }
+    //checking if user has any guesses left
+
+export function checkGuessesLeftFunc(usersGuesses) {
+    const noGuessesLeft = `Luck wasn't on your side today`;
+    if (usersGuesses === 0) {
+        tooHighOrLowSpan.textContent = noGuessesLeft; 
+    }
+}
+
+  
+
