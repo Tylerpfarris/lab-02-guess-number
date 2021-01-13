@@ -1,4 +1,4 @@
-import { compareNumbers } from './utils.js';
+import { compareNumbersFunc, checkGuessesLeftFunc } from './utils.js';
 // 1)go grab these DOM elements (that means ids!)
 
 const makeGuessButton = document.getElementById('makeGuess');
@@ -17,13 +17,10 @@ makeGuessButton.addEventListener('click', () => {
     --usersGuessesRemaining;
     guessesRemainSpan.textContent = usersGuessesRemaining;
    
-    const evaluation = compareNumbers((Number(userGuessInput.value)), randomNumber);
+    compareNumbersFunc((Number(userGuessInput.value)), randomNumber);
 
-    console.log(evaluation);
+    checkGuessesLeftFunc(usersGuessesRemaining);
 
-    
-//         2) Store user guess in variable ('Number(someInput.value)')
- 
  
 });
 
