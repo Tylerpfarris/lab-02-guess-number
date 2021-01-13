@@ -1,29 +1,32 @@
+import { compareNumbers } from './utils.js';
 // 1)go grab these DOM elements (that means ids!)
 
 const makeGuessButton = document.getElementById('makeGuess');
 
-const guessesRemainSpan = document.getElementById('guesses-Remain');
+let guessesRemainSpan = document.getElementById('guesses-Remain');
 
-const tooHighOrLowSpan = document.getElementById('toHighOrLow');
+const userGuessInput = document.getElementById('user-Guess');
 
-const userGuessInput = document.getElementById('userGuess');
 
-// 2)initialize state ( or global 'let')
-//     -random number : n ('Math.random * 20)
-//     -Guesses remain : 4 (let guessesRemain = 4)
-let guessesRemain = 4;
+let usersGuessesRemaining = 4;
 
-let randomNumber = Math.ceil(Math.random() * 20);
+const randomNumber = Math.ceil(Math.random() * 20);
 
-// 3)Add eventListener to button
-//     -On Click
 makeGuessButton.addEventListener('click', () => {
+   
+    --usersGuessesRemaining;
+    guessesRemainSpan.textContent = usersGuessesRemaining;
+   
+    const evaluation = compareNumbers((Number(userGuessInput.value)), randomNumber);
 
-    console.log(guessesRemain);
+    console.log(evaluation);
+
+    
+//         2) Store user guess in variable ('Number(someInput.value)')
+ 
+ 
 });
 
-//         1) State: decrement remaining guesses by 1 (--)
-//         2) Store user guess in variable ('Number(someInput.value)')
 //         3) Compare user guess ith random number
 //         4) View:
 //             a) if user guess is greater than the random number, inject 'too high' into result span
